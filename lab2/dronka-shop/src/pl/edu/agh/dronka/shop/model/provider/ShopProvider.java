@@ -84,7 +84,7 @@ public class ShopProvider {
                     if (value != null && type != null) {
                         item.addFeature(label, type.parse(value));
                     } else {
-                        System.err.println("Error while parsing features of: " + name + ". Maybe there is no description?");
+                        System.err.println("Error while parsing feature '" + label + "' of: '" + name + "'. Maybe there is no description?");
                     }
                 });
 				items.add(item);
