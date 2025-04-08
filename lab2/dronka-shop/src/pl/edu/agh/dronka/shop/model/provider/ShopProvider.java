@@ -4,11 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import pl.edu.agh.dronka.shop.model.Category;
-import pl.edu.agh.dronka.shop.model.Index;
-import pl.edu.agh.dronka.shop.model.Item;
-import pl.edu.agh.dronka.shop.model.Shop;
-import pl.edu.agh.dronka.shop.model.User;
+import pl.edu.agh.dronka.shop.model.*;
 
 public class ShopProvider {
 
@@ -60,6 +56,27 @@ public class ShopProvider {
 		}
 	}
 
+    private static List<String> getLabels(Category category) {
+        switch (category) {
+            case BOOKS -> {
+                return List.of("Liczba stron", "Twarda oprawa");
+            }
+            case ELECTRONICS -> {
+                return List.of("Mobilny", "Gwarancja");
+            }
+            case FOOD -> {
+                return List.of("Data przydatności do spożycia");
+            }
+            case MUSIC -> {
+                return List.of("Gatunek muzyczny", "Dołączone video");
+            }
+            case SPORT -> {
+                return List.of(); // empty list
+            }
+        }
+        return List.of(); // TODO idk why it is necessary
+    }
+
 	private static List<Item> readItems(CSVReader reader, Category category) {
 		List<Item> items = new ArrayList<>();
 
@@ -78,10 +95,16 @@ public class ShopProvider {
 						dataLine, "Tanie bo polskie"));
 				boolean isSecondhand = Boolean.parseBoolean(reader.getValue(
 						dataLine, "Używany"));
+
 				Item item = new Item(name, category, price, quantity);
 				item.setPolish(isPolish);
 				item.setSecondhand(isSecondhand);
-
+                getLabels(category).forEach(label -> {
+                    String value = reader.getValue(dataLine, label);
+                    if (value != null) {
+                        item.addFeature(new Feature(category, value));
+                    }
+                });
 				items.add(item);
 
 			}
