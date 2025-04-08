@@ -84,6 +84,7 @@ public class ShopProvider {
                     if (value != null && type != null) {
                         item.addFeature(label, type.parse(value));
                     } else {
+                        // tutaj założyłem że opisy mają istnieć, i kulturalnie poinformuje o ich braku na konsoli
                         System.err.println("Error while parsing feature '" + label + "' of: '" + name + "'. Maybe there is no description?");
                     }
                 });
