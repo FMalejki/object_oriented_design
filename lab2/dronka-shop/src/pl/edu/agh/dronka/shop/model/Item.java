@@ -1,7 +1,6 @@
 package pl.edu.agh.dronka.shop.model;
 
-import java.awt.*;
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Item {
 
@@ -17,7 +16,7 @@ public class Item {
 
 	private boolean polish;
 
-    private final ArrayList<Feature> features = new ArrayList<>();
+    private final HashMap<String, Object> features = new HashMap<>();
 
 	public Item(String name, Category category, int price, int quantity) {
 		this.name = name;
@@ -69,11 +68,11 @@ public class Item {
 		return polish;
 	}
 
-    public void addFeature(Feature feature) {
-        features.add(feature);
+    public void addFeature(String name, Object value) {
+        features.put(name, value);
     }
 
-    public ArrayList<Feature> getFeatures() {
+    public HashMap<String, Object> getFeatures() {
         return features;
     }
 

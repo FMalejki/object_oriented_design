@@ -56,27 +56,6 @@ public class ShopProvider {
 		}
 	}
 
-    private static List<String> getLabels(Category category) {
-        switch (category) {
-            case BOOKS -> {
-                return List.of("Liczba stron", "Twarda oprawa");
-            }
-            case ELECTRONICS -> {
-                return List.of("Mobilny", "Gwarancja");
-            }
-            case FOOD -> {
-                return List.of("Data przydatności do spożycia");
-            }
-            case MUSIC -> {
-                return List.of("Gatunek muzyczny", "Dołączone video");
-            }
-            case SPORT -> {
-                return List.of(); // empty list
-            }
-        }
-        return List.of(); // TODO idk why it is necessary
-    }
-
 	private static List<Item> readItems(CSVReader reader, Category category) {
 		List<Item> items = new ArrayList<>();
 
@@ -100,9 +79,12 @@ public class ShopProvider {
 				item.setPolish(isPolish);
 				item.setSecondhand(isSecondhand);
                 getLabels(category).forEach(label -> {
-                    String value = reader.getValue(dataLine, label);
-                    if (value != null) {
-                        item.addFeature(new Feature(category, value));
+                    var value = reader.getValue(dataLine, label);
+                    var type = parseTypes(label);
+                    if (value != null && type != null) {
+                        item.addFeature(label, type.parse(value));
+                    } else {
+                        System.err.println("Error while parsing features of: " + name + ". Maybe there is no description?");
                     }
                 });
 				items.add(item);
@@ -112,8 +94,50 @@ public class ShopProvider {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		return items;
 	}
 
+    private static Type parseTypes(String label) {
+        switch (label) {
+            case "Liczba stron" -> {
+                return Type.INTEGER;
+            }
+            case "Twarda oprawa", "Dołączone video" -> {
+                return Type.BOOLEAN;
+            }
+            case "Data przydatności do spożycia" -> {
+                return Type.DATATYPE;
+            }
+            case "Gatunek muzyczny" -> {
+                return Type.ENUM;
+            }
+            default -> {
+                return null; // może nie najpiękniejsze, ale za to najpraktyczniejsze
+            }
+        }
+    }
+
+    private static List<String> getLabels(Category category) {
+        switch (category) {
+            case BOOKS -> {
+                return List.of("Liczba stron", "Twarda oprawa");
+            }
+            case ELECTRONICS -> {
+                return List.of("Mobilny", "Gwarancja");
+            }
+            case FOOD -> {
+                return List.of("Data przydatności do spożycia");
+            }
+            case MUSIC -> {
+                return List.of("Gatunek muzyczny", "Dołączone video");
+            }
+            case SPORT -> {
+                return List.of(); // empty list
+            }
+            default -> {
+                return List.of();   // zwracamy pustą listę, bo pomimo że wykorzystaliśmy wszystkie wartości enuma
+                                    // to i tak kompilator wybrzydza i musi być default :(
+            }
+        }
+    }
 }
