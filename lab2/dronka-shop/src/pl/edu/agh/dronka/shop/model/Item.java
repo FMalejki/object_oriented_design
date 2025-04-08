@@ -1,5 +1,8 @@
 package pl.edu.agh.dronka.shop.model;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public class Item {
 
 	private String name;
@@ -13,6 +16,8 @@ public class Item {
 	private boolean secondhand;
 
 	private boolean polish;
+
+    private final ArrayList<Feature> features = new ArrayList<>();
 
 	public Item(String name, Category category, int price, int quantity) {
 		this.name = name;
@@ -63,6 +68,14 @@ public class Item {
 	public boolean isPolish() {
 		return polish;
 	}
+
+    public void addFeature(Feature feature) {
+        features.add(feature);
+    }
+
+    public ArrayList<Feature> getFeatures() {
+        return features;
+    }
 
 	@Override
 	public String toString() {
