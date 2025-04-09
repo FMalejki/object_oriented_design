@@ -103,7 +103,7 @@ public class ShopProvider {
             case "Liczba stron" -> {
                 return Type.INTEGER;
             }
-            case "Twarda oprawa", "Dołączone video" -> {
+            case "Twarda oprawa", "Dołączone video", "Gwarancja", "Mobilny" -> {
                 return Type.BOOLEAN;
             }
             case "Data przydatności do spożycia" -> {
