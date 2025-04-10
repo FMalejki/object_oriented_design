@@ -40,6 +40,7 @@ public class CSVReader {
 			while ((line = br.readLine()) != null) {
 				data.add(line.split(","));
 			}
+
 		}
 
 		String[] headerLine = data.remove(0);
@@ -47,6 +48,7 @@ public class CSVReader {
 		for (int i = 0; i < headerLine.length; i++) {
 			header.put(headerLine[i], i);
 		}
+
 	}
 
 }

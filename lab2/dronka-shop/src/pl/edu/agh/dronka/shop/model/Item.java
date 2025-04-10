@@ -1,8 +1,10 @@
 package pl.edu.agh.dronka.shop.model;
 
-import java.util.HashMap;
+import pl.edu.agh.dronka.shop.model.filter.FilterSpec;
 
-public class Item {
+import java.util.Map;
+
+public abstract class Item {
 
 	private String name;
 
@@ -15,8 +17,6 @@ public class Item {
 	private boolean secondhand;
 
 	private boolean polish;
-
-    private final HashMap<String, Object> features = new HashMap<>();
 
 	public Item(String name, Category category, int price, int quantity) {
 		this.name = name;
@@ -68,16 +68,13 @@ public class Item {
 		return polish;
 	}
 
-    public void addFeature(String name, Object value) {
-        features.put(name, value);
-    }
-
-    public HashMap<String, Object> getFeatures() {
-        return features;
-    }
-
 	@Override
 	public String toString() {
 		return getName();
 	}
+
+
+	public abstract Map<String, Object> getAdditionalPropertiesMap();
+
+	public abstract boolean isAdditionalFieldsAppliedTo(FilterSpec filter);
 }

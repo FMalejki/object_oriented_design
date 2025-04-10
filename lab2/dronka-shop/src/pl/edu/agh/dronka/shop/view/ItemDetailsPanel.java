@@ -1,3 +1,4 @@
+
 package pl.edu.agh.dronka.shop.view;
 
 import java.awt.BorderLayout;
@@ -66,21 +67,9 @@ public class ItemDetailsPanel extends JPanel {
 		buttonsPanel.add(backButton);
 		buttonsPanel.add(addToCartButton);
 
-		backButton.addActionListener(new ActionListener() {
+		backButton.addActionListener(arg0 -> shopController.showItems(shopController.getCurrentCategory()));
 
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				shopController.showItems(shopController.getCurrentCategory());
-			}
-		});
-
-		addToCartButton.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				shopController.addToCart(currentItem);
-			}
-		});
+		addToCartButton.addActionListener(e -> shopController.addToCart(currentItem));
 
 		return buttonsPanel;
 	}
