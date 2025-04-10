@@ -24,7 +24,7 @@ public class Finder {
 
         for (Collection<Prisoner> prisonerCollection : allPrisoners.values()) {
             for (Prisoner prisoner : prisonerCollection) {
-                if (!prisoner.couldBeSuspect() && prisoner.name.equals(name)) {
+                if (!prisoner.couldBeSuspect() && prisoner.getName().equals(name)) {
                     suspectedPrisoners.add(prisoner);
                 }
                 if (suspectedPrisoners.size() >= 10) {
@@ -38,7 +38,7 @@ public class Finder {
 
         if (suspectedPrisoners.size() < 10) {
             for (Person person : allPersons) {
-                if (person.getAge() > 18 && person.firstname().equals(name)) {
+                if (person.getAge() > 18 && person.getFirstname().equals(name)) {
                     suspectedPersons.add(person);
                 }
                 if (suspectedPrisoners.size() + suspectedPersons.size() >= 10) {
@@ -55,7 +55,7 @@ public class Finder {
         }
 
         for (Person p : suspectedPersons) {
-            System.out.println(p.display()); // TODO tak powinno być, nie z render
+            System.out.println(p.display());
         }
     }
 }

@@ -1,9 +1,9 @@
 package pl.edu.agh.to.lab4;
 
 public class Person {
-    private String firstname;
+    private final String firstname;
 
-    private String lastname;
+    private final String lastname;
 
     private int age;
 
@@ -17,11 +17,11 @@ public class Person {
         return age;
     }
 
-    public String firstname() {
+    public String getFirstname() {
         return firstname;
     }
 
-    public String lastname() {
+    public String getLastname() {
         return lastname;
     }
 

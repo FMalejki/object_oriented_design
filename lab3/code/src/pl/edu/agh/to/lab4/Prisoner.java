@@ -9,10 +9,10 @@ public class Prisoner {
 
     private final String pesel;
 
-    public final String name;
+    private final String name;
 
-    public final String surname;
-
+    private final String surname;
+    
     public Prisoner(String name, String surname, String pesel, int judgementYear, int sentenceDuration) {
         this.name = name;
         this.surname = surname;
@@ -31,6 +31,14 @@ public class Prisoner {
 
     public boolean couldBeSuspect() {
         return judgementYear + senteceDuration >= getCurrentYear();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
     }
 
     public int getCurrentYear() {
