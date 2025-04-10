@@ -23,4 +23,8 @@ public class Person {
     public String display() {
         return firstname + " " + lastname;
     }
+
+    public int getCurrentYear() {
+        return Calendar.getInstance().get(Calendar.YEAR);
+    }
 }
