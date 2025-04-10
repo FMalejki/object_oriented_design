@@ -1,20 +1,15 @@
 package pl.edu.agh.to.lab4;
 
+import java.util.Calendar;
+
 public class Person {
     private final String firstname;
 
     private final String lastname;
 
-    private int age;
-
-    public Person(String firstname, String lastname, int age) {
-        this.age = age;
+    public Person(String firstname, String lastname) {
         this.firstname = firstname;
         this.lastname = lastname;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public String getFirstname() {
