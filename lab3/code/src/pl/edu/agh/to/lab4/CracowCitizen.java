@@ -5,8 +5,8 @@ public class CracowCitizen extends Person {
     private int age;
 
     public CracowCitizen(String firstname, String lastname, int age) {
+        super(firstname, lastname);
         this.age = age;
-        this.super(firstname, lastname);
     }
 
     public int getAge() {
