@@ -35,6 +35,6 @@ public class PrisonersDatabase {
     }
 
     public static String render(Prisoner prisoner) {
-        return prisoner.getName() + " " + prisoner.getSurname();
+        return prisoner.getFirstname() + " " + prisoner.getLastname();
     }
 }
