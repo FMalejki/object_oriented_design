@@ -24,7 +24,7 @@ public class Finder {
 
         for (Collection<Prisoner> prisonerCollection : allPrisoners.values()) {
             for (Prisoner prisoner : prisonerCollection) {
-                if (!prisoner.czyMoglbyEwentualnieBycPodejrzany() && prisoner.name.equals(name)) {
+                if (!prisoner.couldBeSuspect() && prisoner.name.equals(name)) {
                     suspectedPrisoners.add(prisoner);
                 }
                 if (suspectedPrisoners.size() >= 10) {
@@ -51,11 +51,11 @@ public class Finder {
         System.out.println("Znalazlem " + t + " pasujacych podejrzanych!");
 
         for (Prisoner n : suspectedPrisoners) {
-            System.out.println(PrisonersDatabase.render(n));
+            System.out.println(n.display());
         }
 
         for (Person p : suspectedPersons) {
-            System.out.println(p.display());
+            System.out.println(p.display()); // TODO tak powinno być, nie z render
         }
     }
 }

@@ -21,7 +21,7 @@ public class Person {
         return firstname;
     }
 
-    public String middlename() {
+    public String lastname() {
         return lastname;
     }
 
