@@ -5,23 +5,23 @@ import java.util.Collection;
 
 public class PersonDataProvider {
 
-    private final Collection<Person> cracovCitizens = new ArrayList<Person>();
+    private final Collection<CracowCitizen> cracowCitizens = new ArrayList<CracowCitizen>();
 
     public PersonDataProvider() {
-        cracovCitizens.add(new Person("Jan", "Kowalski", 30));
-        cracovCitizens.add(new Person("Janusz", "Krakowski", 30));
-        cracovCitizens.add(new Person("Janusz", "Mlodociany", 10));
-        cracovCitizens.add(new Person("Kasia", "Kosinska", 19));
-        cracovCitizens.add(new Person("Piotr", "Zgredek", 29));
-        cracovCitizens.add(new Person("Tomek", "Gimbus", 14));
-        cracovCitizens.add(new Person("Janusz", "Gimbus", 15));
-        cracovCitizens.add(new Person("Alicja", "Zaczarowana", 22));
-        cracovCitizens.add(new Person("Janusz", "Programista", 77));
-        cracovCitizens.add(new Person("Pawel", "Pawlowicz", 32));
-        cracovCitizens.add(new Person("Krzysztof", "Mendel", 30));
+        cracowCitizens.add(new CracowCitizen("Jan", "Kowalski", 30));
+        cracowCitizens.add(new CracowCitizen("Janusz", "Krakowski", 30));
+        cracowCitizens.add(new CracowCitizen("Janusz", "Mlodociany", 10));
+        cracowCitizens.add(new CracowCitizen("Kasia", "Kosinska", 19));
+        cracowCitizens.add(new CracowCitizen("Piotr", "Zgredek", 29));
+        cracowCitizens.add(new CracowCitizen("Tomek", "Gimbus", 14));
+        cracowCitizens.add(new CracowCitizen("Janusz", "Gimbus", 15));
+        cracowCitizens.add(new CracowCitizen("Alicja", "Zaczarowana", 22));
+        cracowCitizens.add(new CracowCitizen("Janusz", "Programista", 77));
+        cracowCitizens.add(new CracowCitizen("Pawel", "Pawlowicz", 32));
+        cracowCitizens.add(new CracowCitizen("Krzysztof", "Mendel", 30));
     }
 
-    public Collection<Person> getAllCracovCitizens() {
-        return cracovCitizens;
+    public Collection<CracowCitizen> getAllCracovCitizens() {
+        return cracowCitizens;
     }
 }
