@@ -1,11 +1,15 @@
-package pl.edu.agh.to.lab4;
+package pl.edu.agh.to.lab4.providers;
+
+import pl.edu.agh.to.lab4.suspects.Suspect;
+import pl.edu.agh.to.lab4.suspects.Prisoner;
+import pl.edu.agh.to.lab4.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PrisonersDatabase {
+public class PrisonersDatabase implements Provider {
 
     private final Map<String, Collection<Prisoner>> prisoners = new HashMap<String, Collection<Prisoner>>();
 
@@ -36,5 +40,10 @@ public class PrisonersDatabase {
 
     public static String render(Prisoner prisoner) {
         return prisoner.getFirstname() + " " + prisoner.getLastname();
+    }
+
+    @Override
+    public Collection<? extends Suspect> getData() {
+        return Utils.flatifyList(prisoners.values());
     }
 }

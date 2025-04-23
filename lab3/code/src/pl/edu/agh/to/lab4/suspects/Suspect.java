@@ -1,13 +1,10 @@
-package pl.edu.agh.to.lab4;
+package pl.edu.agh.to.lab4.suspects;
 
-import java.util.Calendar;
-
-public class Person {
+public abstract class Suspect {
     private final String firstname;
-
     private final String lastname;
 
-    public Person(String firstname, String lastname) {
+    public Suspect(String firstname, String lastname) {
         this.firstname = firstname;
         this.lastname = lastname;
     }
@@ -24,7 +21,5 @@ public class Person {
         return firstname + " " + lastname;
     }
 
-    public int getCurrentYear() {
-        return Calendar.getInstance().get(Calendar.YEAR);
-    }
+    public abstract int getAge();
 }
