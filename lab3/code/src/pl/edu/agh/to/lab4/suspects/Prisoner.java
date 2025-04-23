@@ -1,12 +1,12 @@
-package pl.edu.agh.to.lab4;
+package pl.edu.agh.to.lab4.suspects;
 
-import java.util.Calendar;
+import pl.edu.agh.to.lab4.utils.Utils;
 
-public class Prisoner extends Person {
+public class Prisoner extends Suspect {
     
     private final int judgementYear;
 
-    private final int senteceDuration;
+    private final int sentenceDuration;
 
     private final String pesel;
     
@@ -14,7 +14,7 @@ public class Prisoner extends Person {
         super(firstname, lastname);
         this.pesel = pesel;
         this.judgementYear = judgementYear;
-        this.senteceDuration = sentenceDuration;
+        this.sentenceDuration = sentenceDuration;
     }
 
     public String getPesel() {
@@ -22,6 +22,11 @@ public class Prisoner extends Person {
     }
 
     public boolean couldBeSuspect() {
-        return judgementYear + senteceDuration >= getCurrentYear();
+        return judgementYear + sentenceDuration <= Utils.getCurrentYear();
+    }
+
+    @Override
+    public int getAge() {
+        return Utils.getCurrentYear() - Utils.getBirthYearFromPesel(pesel);
     }
 }

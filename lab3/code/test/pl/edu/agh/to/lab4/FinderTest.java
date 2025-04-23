@@ -10,6 +10,10 @@ import java.util.Map;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import pl.edu.agh.to.lab4.filters.Finder;
+import pl.edu.agh.to.lab4.suspects.Person;
+import pl.edu.agh.to.lab4.suspects.Suspect;
+import pl.edu.agh.to.lab4.suspects.Prisoner;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -19,7 +23,7 @@ public class FinderTest {
 
     private PrintStream originalOut;
 
-    private Collection<Person> allPersons = new ArrayList<Person>();
+    private Collection<Suspect> allPersons = new ArrayList<Suspect>();
 
     private Map<String, Collection<Prisoner>> allPrisoners = new HashMap<String, Collection<Prisoner>>();
 
