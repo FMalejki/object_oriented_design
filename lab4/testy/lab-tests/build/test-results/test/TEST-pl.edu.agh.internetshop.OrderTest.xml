@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pl.edu.agh.internetshop.OrderTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2025-05-05T00:16:42" hostname="DESKTOP-RFOQRB3" time="0.125">
+  <properties/>
+  <testcase name="testGetPriceWithIndividualDiscount()" classname="pl.edu.agh.internetshop.OrderTest" time="0.003"/>
+  <testcase name="testPriceWithTaxesWithRoundUp()" classname="pl.edu.agh.internetshop.OrderTest" time="0.0"/>
+  <testcase name="testPriceWithTaxesWithRoundDown()" classname="pl.edu.agh.internetshop.OrderTest" time="0.0"/>
+  <testcase name="testGetPrice()" classname="pl.edu.agh.internetshop.OrderTest" time="0.001"/>
+  <testcase name="testWhetherIdExists()" classname="pl.edu.agh.internetshop.OrderTest" time="0.084"/>
+  <testcase name="testShipmentWithoutSetting()" classname="pl.edu.agh.internetshop.OrderTest" time="0.001"/>
+  <testcase name="testGetPriceWithGlobalDiscount()" classname="pl.edu.agh.internetshop.OrderTest" time="0.001"/>
+  <testcase name="testGetProductThroughOrder()" classname="pl.edu.agh.internetshop.OrderTest" time="0.001"/>
+  <testcase name="testSetShipment()" classname="pl.edu.agh.internetshop.OrderTest" time="0.003"/>
+  <testcase name="testGetMultipleProductsThroughOrder()" classname="pl.edu.agh.internetshop.OrderTest" time="0.0"/>
+  <testcase name="testIsPaidWithoutPaying()" classname="pl.edu.agh.internetshop.OrderTest" time="0.0"/>
+  <testcase name="testSetPaymentMethod()" classname="pl.edu.agh.internetshop.OrderTest" time="0.004"/>
+  <testcase name="testSending()" classname="pl.edu.agh.internetshop.OrderTest" time="0.015"/>
+  <testcase name="testPaying()" classname="pl.edu.agh.internetshop.OrderTest" time="0.004"/>
+  <testcase name="testIsSentWithoutSending()" classname="pl.edu.agh.internetshop.OrderTest" time="0.001"/>
+  <testcase name="testPriceWithTaxesWithoutRoundUp()" classname="pl.edu.agh.internetshop.OrderTest" time="0.0"/>
+  <testcase name="testPriceWithTaxesAndDiscount()" classname="pl.edu.agh.internetshop.OrderTest" time="0.001"/>
+  <testcase name="testSetShipmentMethod()" classname="pl.edu.agh.internetshop.OrderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
