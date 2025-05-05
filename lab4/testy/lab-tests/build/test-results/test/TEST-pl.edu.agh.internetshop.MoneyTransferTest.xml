@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pl.edu.agh.internetshop.MoneyTransferTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-05-05T00:16:42" hostname="DESKTOP-RFOQRB3" time="0.004">
+  <properties/>
+  <testcase name="testCreation()" classname="pl.edu.agh.internetshop.MoneyTransferTest" time="0.001"/>
+  <testcase name="testCheckCommitFlagWithoutCommitting()" classname="pl.edu.agh.internetshop.MoneyTransferTest" time="0.001"/>
+  <testcase name="testCheckCommitFlagWithCommitting()" classname="pl.edu.agh.internetshop.MoneyTransferTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
