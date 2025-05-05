@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pl.edu.agh.internetshop.SearchTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-04-18T10:47:06" hostname="JAKUBWOREK" time="0.036">
+  <properties/>
+  <testcase name="testWithMultipleStrategies()" classname="pl.edu.agh.internetshop.SearchTest" time="0.03"/>
+  <testcase name="testSearchByPriceWithTaxes()" classname="pl.edu.agh.internetshop.SearchTest" time="0.001"/>
+  <testcase name="testSearchByPriceWithoutTaxes()" classname="pl.edu.agh.internetshop.SearchTest" time="0.001"/>
+  <testcase name="testSearchByProductName()" classname="pl.edu.agh.internetshop.SearchTest" time="0.001"/>
+  <testcase name="testSearchBySurname()" classname="pl.edu.agh.internetshop.SearchTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
