@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.Date;
 
 import magazyn.Towar;
+import rabaty.ObliczCenePoRabacie;
+import rabaty.ObliczCenePoRabacieKwotowym;
 
 
 public class Faktura {
@@ -11,6 +13,7 @@ public class Faktura {
 	String kontrahent;
 	ArrayList<Pozycja> pozycje;
 	double suma;
+	ObliczCenePoRabacie liczarkaRabatu;
 	public Faktura(Date dataSprzedazy,String kontrahent)
 	{
 		this.dataSprzedazy=dataSprzedazy;
@@ -44,7 +47,7 @@ public class Faktura {
 			pozycja = iteratorPozycji.next();
 			suma+=pozycja.getWartosc();
 		}
-		suma = liczarkaRabatu.obliczCenePoRabacie(suma, 20);
+		suma = liczarkaRabatu.obliczCenePoRabacie(suma);
 	}
 	public Iterator<Pozycja> getIteratorPozycji()
 	{
