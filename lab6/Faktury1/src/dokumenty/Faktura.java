@@ -17,6 +17,7 @@ public class Faktura {
 		this.kontrahent=kontrahent;
 		pozycje=new ArrayList<Pozycja>();
 		suma=0;
+		liczarkaRabatu = new ObliczCenePoRabacieKwotowym();
 	}
 	public void dodajPozycje(Towar towar, double ilosc)
 	{
@@ -43,6 +44,7 @@ public class Faktura {
 			pozycja = iteratorPozycji.next();
 			suma+=pozycja.getWartosc();
 		}
+		suma = liczarkaRabatu.obliczCenePoRabacie(suma, 20);
 	}
 	public Iterator<Pozycja> getIteratorPozycji()
 	{
