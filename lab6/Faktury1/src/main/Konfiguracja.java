@@ -12,7 +12,7 @@ public class Konfiguracja {
         return instance;
     }
 
-    public double getCurrentProcentageRabat() {
+    public double getCurrentPercentageRabat() {
         return 0.8;
     }
     public double getCurrentValueRabat() {
