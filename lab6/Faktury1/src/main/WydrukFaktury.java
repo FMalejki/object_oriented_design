@@ -1,13 +1,13 @@
-package raporty;
+package main;
 
 import dokumenty.Faktura;
 import dokumenty.Pozycja;
 
 import java.util.Iterator;
 
-public class Druk {
-    public static void wypiszFakture(Faktura faktura)
-    {
+public class WydrukFaktury {
+
+    public static void drukujFakture(Faktura faktura) {
         System.out.println("=====================================================");
         System.out.println("FA z dnia: "+faktura.getDataSprzedazy().toString());
         System.out.println("Wystawiona dla: "+faktura.getKontrahent());
@@ -20,4 +20,5 @@ public class Druk {
         }
         System.out.println("=====================================================");
     }
+
 }
