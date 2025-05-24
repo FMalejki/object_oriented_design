@@ -4,7 +4,8 @@ import java.util.Iterator;
 import java.util.Date;
 
 import magazyn.Towar;
-import rabaty.ObliczCenePoRabacie;
+import rabaty.IObliczCenePoRabacie;
+import rabaty.Konfiguracja;
 import rabaty.ObliczCenePoRabacieKwotowym;
 
 
@@ -13,15 +14,16 @@ public class Faktura {
 	String kontrahent;
 	ArrayList<Pozycja> pozycje;
 	double suma;
-	ObliczCenePoRabacie liczarkaRabatu;
+	IObliczCenePoRabacie liczarkaRabatu;
 	public Faktura(Date dataSprzedazy,String kontrahent)
 	{
 		this.dataSprzedazy=dataSprzedazy;
 		this.kontrahent=kontrahent;
 		pozycje=new ArrayList<Pozycja>();
 		suma=0;
-		liczarkaRabatu = new ObliczCenePoRabacieKwotowym();
-	}
+		liczarkaRabatu = Konfiguracja.getInstance().getObliczanieRabatu();
+
+    }
 	public void dodajPozycje(Towar towar, double ilosc)
 	{
 		pozycje.add(new Pozycja(towar,ilosc));
@@ -57,6 +59,5 @@ public class Faktura {
 	{
 		return this.kontrahent;
 	}
-	
-	
+
 }

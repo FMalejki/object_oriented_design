@@ -1,10 +1,17 @@
 package rabaty;
 
-import main.Konfiguracja;
+public class ObliczCenePoRabacieKwotowym implements IObliczCenePoRabacie {
+    private final double kwotaRabatu;
 
-public class ObliczCenePoRabacieKwotowym implements ObliczCenePoRabacie{
+    public ObliczCenePoRabacieKwotowym(double kwotaRabatu) {
+        if (kwotaRabatu < 0) {
+            throw new IllegalArgumentException("Kwota rabatu nie może być ujemna");
+        }
+        this.kwotaRabatu = kwotaRabatu;
+    }
+
     @Override
-    public double obliczCenePoRabacie(double cena) {
-        return cena - Konfiguracja.getInstance().getCurrentValueRabat();
+    public double obliczCenePoRabacie(double cenaPierwotna) {
+        return Math.max(0, cenaPierwotna - kwotaRabatu);
     }
 }
