@@ -1,2 +1,6 @@
 rootProject.name = 'lab7'
+include 'src:main:adapter'
+findProject(':src:main:adapter')?.name = 'adapter'
+include 'src:main:adapter'
+findProject(':src:main:adapter')?.name = 'adapter'
 
