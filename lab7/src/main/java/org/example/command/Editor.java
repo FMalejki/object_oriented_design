@@ -1,7 +1,7 @@
-package command;
+package org.example.command;
 
 public class Editor {
-    String text;
+    public String text;
 
     public String getSelection(){
         if (text != null && text.length() > 10) {

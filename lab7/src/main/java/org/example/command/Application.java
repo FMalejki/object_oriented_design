@@ -1,4 +1,4 @@
-package command;
+package org.example.command;
 
 public class Application {
     public String clipboard;

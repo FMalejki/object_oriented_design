@@ -1,4 +1,4 @@
-package command;
+package org.example.command;
 
 public class CopyCommand extends Command {
     public CopyCommand(Application app, Editor editor) {

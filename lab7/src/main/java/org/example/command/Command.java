@@ -1,4 +1,4 @@
-package command;
+package org.example.command;
 
 public abstract class Command {
     public Application app;

@@ -1,4 +1,4 @@
-package command;
+package org.example.command;
 
 public class PasteCommand extends Command {
     public PasteCommand(Application app, Editor editor){

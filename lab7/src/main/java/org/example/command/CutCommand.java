@@ -1,4 +1,4 @@
-package command;
+package org.example.command;
 
 public class CutCommand extends Command {
     public CutCommand(Application app, Editor editor){
